@@ -1,15 +1,19 @@
-import "./style.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
-      <div>
-        <h1>Página principal de KbSport</h1>
-        <p>
-          Página dedicada a la aplicación de venta de equipo deportivo KbSport
-        </p>
-      </div>
-    </>
+    <Router>
+      <Navbar /> {}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacto" element={<div>Contacto</div>} />
+        <Route path="/sobre-nosotros" element={<div>Sobre Nosotros</div>} />
+      </Routes>
+    </Router>
   );
 }
 
